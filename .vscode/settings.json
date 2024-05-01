@@ -1,0 +1,6 @@
+{
+    "git.ignoreLimitWarning": true,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
+    "emmet.showExpandedAbbreviation": "always",
+    "emmet.useInlineCompletions": true
+}
