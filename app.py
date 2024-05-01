@@ -3,7 +3,7 @@ import json
 from flask import Flask, render_template, request
 from dotenv import dotenv_values
 
-config = dotenv_values("/etc/secrets/.env")
+config = dotenv_values(".env")
 openai.api_key=config["OPENAI_API_KEY"] ###example .env file###  OPENAI_API_KEY=sk-RGYOvDBFqyNLekF4sdlSmImkju4jk7dhKJHIGH
  
 app = Flask(__name__,
