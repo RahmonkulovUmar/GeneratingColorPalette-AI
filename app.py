@@ -2,9 +2,12 @@ import openai
 import json
 from flask import Flask, render_template, request
 from dotenv import dotenv_values
+import os
 
-config = dotenv_values(".env")
-openai.api_key=config["OPENAI_API_KEY"] ###example .env file###  OPENAI_API_KEY=sk-RGYOvDBFqyNLekF4sdlSmImkju4jk7dhKJHIGH
+api_key = os.environ.get('OPENAI_API_KEY')
+
+#config = dotenv_values(".env")
+openai.api_key=api_key ###example .env file###  OPENAI_API_KEY=sk-RGYOvDBFqyNLekF4sdlSmImkju4jk7dhKJHIGH
  
 app = Flask(__name__,
     template_folder='templates',
@@ -54,4 +57,6 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(debug=True, port=4000)
+    #app.run(debug=True, port=4000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
